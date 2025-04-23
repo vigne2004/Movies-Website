@@ -1,21 +1,24 @@
-import {Component} from 'react'
+import {useState} from 'react'
 
 import './index.css'
 
-class Counter extends Component {
-  render() {
-    return (
-      <div>
-        <button type="button" onClick={this.onDecrement}>
-          -
-        </button>
-        <div>0</div>
-        <button type="button" onClick={this.onIncrement}>
-          +
-        </button>
-      </div>
-    )
-  }
+const Counter = () => {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setCount(count - 1)}
+        disabled={count === 0}
+      >
+        -
+      </button>
+      <div>{count}</div>
+      <button type="button" onClick={() => setCount(count + 1)}>
+        +
+      </button>
+    </div>
+  )
 }
 
 export default Counter

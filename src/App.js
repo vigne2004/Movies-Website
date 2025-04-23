@@ -1,5 +1,6 @@
 import './App.css'
+import Counter from './components/Counter'
 
-const App = () => <div>Hello World</div>
+const App = () => <Counter />
 
 export default App
